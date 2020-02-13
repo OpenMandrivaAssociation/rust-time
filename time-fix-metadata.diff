@@ -1,0 +1,25 @@
+--- time-0.1.42/Cargo.toml	1970-01-01T00:00:00+00:00
++++ time-0.1.42/Cargo.toml	2019-06-21T20:09:19.610502+00:00
+@@ -19,6 +19,7 @@
+ documentation = "https://doc.rust-lang.org/time"
+ license = "MIT/Apache-2.0"
+ repository = "https://github.com/rust-lang/time"
++exclude = ["/.travis.yml", "/appveyor.yml"]
+ [dependencies.libc]
+ version = "0.2.1"
+ 
+@@ -28,14 +29,6 @@
+ [dev-dependencies.log]
+ version = "0.4"
+ 
+-[dev-dependencies.winapi]
+-version = "0.3.0"
+-features = ["std", "processthreadsapi", "winbase"]
+-[target."cfg(target_os = \"redox\")".dependencies.redox_syscall]
+-version = "0.1"
+-[target."cfg(windows)".dependencies.winapi]
+-version = "0.3.0"
+-features = ["std", "minwinbase", "minwindef", "ntdef", "profileapi", "sysinfoapi", "timezoneapi"]
+ [badges.appveyor]
+ repository = "alexcrichton/time"
+ 
