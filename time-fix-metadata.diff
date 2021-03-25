@@ -1,25 +1,25 @@
---- time-0.1.42/Cargo.toml	1970-01-01T00:00:00+00:00
-+++ time-0.1.42/Cargo.toml	2019-06-21T20:09:19.610502+00:00
-@@ -19,6 +19,7 @@
- documentation = "https://doc.rust-lang.org/time"
- license = "MIT/Apache-2.0"
- repository = "https://github.com/rust-lang/time"
-+exclude = ["/.travis.yml", "/appveyor.yml"]
- [dependencies.libc]
- version = "0.2.1"
- 
-@@ -28,14 +29,6 @@
+diff -up time-0.1.44/Cargo.toml.1~ time-0.1.44/Cargo.toml
+--- time-0.1.44/Cargo.toml.1~	2020-08-26 22:49:45.000000000 +0200
++++ time-0.1.44/Cargo.toml	2021-03-26 00:55:24.845995930 +0100
+@@ -14,7 +14,7 @@
+ name = "time"
+ version = "0.1.44"
+ authors = ["The Rust Project Developers"]
+-exclude = [".github", "benches"]
++exclude = [".github", "benches", "/.travis.yml", "/appveyor.yml"]
+ description = "Utilities for working with time-related functions in Rust.\n"
+ homepage = "https://github.com/time-rs/time"
+ documentation = "https://docs.rs/time/~0.1"
+@@ -29,12 +29,3 @@ version = "0.3"
+ optional = true
  [dev-dependencies.log]
  version = "0.4"
- 
+-
 -[dev-dependencies.winapi]
 -version = "0.3.0"
 -features = ["std", "processthreadsapi", "winbase"]
--[target."cfg(target_os = \"redox\")".dependencies.redox_syscall]
--version = "0.1"
+-[target."cfg(target_os = \"wasi\")".dependencies.wasi]
+-version = "=0.10.0"
 -[target."cfg(windows)".dependencies.winapi]
 -version = "0.3.0"
 -features = ["std", "minwinbase", "minwindef", "ntdef", "profileapi", "sysinfoapi", "timezoneapi"]
- [badges.appveyor]
- repository = "alexcrichton/time"
- 
