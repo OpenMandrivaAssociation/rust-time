@@ -5,7 +5,7 @@
 
 Name:           rust-%{crate}
 Version:        0.1.44
-Release:        1
+Release:        2
 Summary:        Utilities for working with time-related functions in Rust
 
 # Upstream license specification: MIT/Apache-2.0
